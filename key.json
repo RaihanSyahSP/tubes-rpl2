@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "instant-form-376715",
+  "private_key_id": "19ebf5b9b5e5679c2059f58a08555d7ccc335c7d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCuBqQgxDFi22Vc\nVNYDXL6sCm1Kgr+EqaPclvKBzeWVMh/bMLcRXkfZE+ErtlacTyXp7ysv5LXf/xy7\nxqhopLI3CyGwciWiZtsf/O8zbVABOG83Dkj4n9kn4fyNzhVzdjTUvBNqhdwqVsJV\nGUuRdLMTFD5U8zwjtRBeM76pfYfH25ozX8Vo4Tp6yzaLk3fRGsmNL2POWnrh1RlE\n1t1ERa+fwryN5bPEXRLMcp9z9ihXUXUQdFS8k7Kr/CKfBvAU4T/FECrWFyj9egjM\nXC12NmQkvCJAmtFvy1f7PrfwufFy2GnX3259virsb9Aq0hpIBLtq8X6TRa9NTUNU\nM9M4fvWHAgMBAAECggEAT/2le5oyySnnkWU9ahY7XoD8c39d4PDI7SBFH/0wRj/f\n/LSLsWQQymsk2R7a+MY4uyrAQydxoiB1aKqLxm3NrRdkyOHvApMcrbtph837NFRo\nanoaeI2hF3/8woGzwnrXFeHNWu1koeF3Of6Cib2GgoKPlCSpxA/6EhLe1LFqtCYt\ni58NuxRGozp57Jm4JRpnbiK9su7Wr/iXXrV8y2GjbLBbs37HUgOVgZUFX3DyFYC5\n9iATYaMgpMdDmLP6qlt1hkmsdZI/my6HwdHhrCfCBimXrXAK5SRWRqkHd1bPLyHZ\n8C36y7mvw2F1SU3i6wMN2bXl4XvzuH3G3d7ZSNzRIQKBgQDsz3I94EacjiBqNog+\nDv4a25Ls7aGeQn8oTtaDhzh3RftFGXQ+Wcof47EFMvlkLi3+bS+D1QLwlbhWiu+v\nP2H0cY4JApZtTYvelBPGBTmGDNp2eOG0Jqvyl4tUc4fuW12TbLgpvD2wtk5J/sSt\nRJyDsTU+fNBUA7Y1KaH8B9qU7QKBgQC8IMC/13NFyQiBsRl2V+5HFD1r/GNBDB5v\nwpjQBrGEgkQ3jLFow6UAzWeQfnXwDwIWRyGEx7FfM9+VSEX/rxE5+Zqm0AM4vBTk\nSys+FrmCXUOfaj7FeNrny2KAae+i+jy5PEcpnXciOpuNfbXTDVmpUrSJleHIkhWD\nnVCdkxn5wwKBgQC+7XZ3SubDfJfH6tWn62CWeOgZ3HHM7mIlNoMfops1FxhCmwYs\n6yna0jI8Nd/7FHyCwLdpfAmVvbDVHcmnqtuoQRG6U/rCf55Aw3S52CaL3Lsaf9XB\n8Nf7jJGKcmdrFwD4RtSo2ZuHaUTvxdf+tu3WA78g9XLl+eQjMsDmOdLS9QKBgQC5\nhvdvedMldC9ebz/0FJ1ZHZ3BO+LKSGBPyTIYnTE9w5XwzmA7OA4mb2r99ajreHGP\ndNCaeLD0eVy6hM77azPq37xjW+qBbgKQbY0UqyaBaOaCdS24YwpG462dhFued3eh\nGc/4O2E8sV2sONgybg0JThXbRaOnwGFVLbRN4b8RLwKBgQDA1t4JDH04r2ovTBek\nRWF396+XRL6DXGwI2r1MTC30hb8c/UcS5nCUy93bDdzja5Ja6wKLdXR3luE9+gEl\n9ra6SJH9WcALt/4dCd1wnGb0FjvbZdSV0vwFYWYvQrDt6Ad4zVM3H+wH6/R/2Mtj\njkT2hyPDLNDt1uRZr1fMW0iuTg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "nyoba-vision@instant-form-376715.iam.gserviceaccount.com",
+  "client_id": "110260814589915190116",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nyoba-vision%40instant-form-376715.iam.gserviceaccount.com"
+}
