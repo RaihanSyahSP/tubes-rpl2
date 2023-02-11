@@ -1,8 +1,8 @@
 <?php
 class SpoonacularModel
 {
-    // private $apiKey = '81ac51da8e2048c19144b453cbf15c65';
-    private $apiKey = 'b45d5854806c49ae955763d19945bb2e';
+    private $apiKey = '81ac51da8e2048c19144b453cbf15c65';
+    // private $apiKey = 'b45d5854806c49ae955763d19945bb2e';
     private $url;
 
     public function checkQuota()
@@ -46,10 +46,26 @@ class SpoonacularModel
         return $quota_used;
     }
 
-    public function searchRecipe($ingredients)
-    {
-        // $url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=$ingredients&apiKey=" . $this->apiKey;
-        $url = "http://localhost:4433/tubes-rpl2/dummySpoonacular.json";
+    // public function searchRecipeWithInfo($ingredients)
+    // {
+    //     $url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=$ingredients&apiKey=" . $this->apiKey;
+    //     // $url = "http://localhost:4433/tubes-rpl2/dummySpoonacular.json";
+    //     $options = [
+    //         "http" => [
+    //             "method" => "GET",
+    //             "header" => "Content-Type: application/json",
+    //         ]
+    //     ];
+    //     $context = stream_context_create($options);
+    //     $result = json_decode(file_get_contents($url, false, $context), true);
+    //     // var_dump($result);
+
+    //     // $this->checkQuota();
+    //     return $result;
+    // }
+
+    public function getRandomRecipe() {
+        $url = "https://api.spoonacular.com/recipes/random?number=10&apiKey=" . $this->apiKey;
         $options = [
             "http" => [
                 "method" => "GET",
@@ -57,8 +73,28 @@ class SpoonacularModel
             ]
         ];
         $context = stream_context_create($options);
-        $result = json_decode(file_get_contents($url, false, $context), true);
-        $this->checkQuota();
+        $responseRandom = json_decode(file_get_contents($url, false, $context), true);
+        $randomRecipe = $responseRandom['recipes'];
+        // $this->checkQuota();
+        return $randomRecipe;
+  }
+
+    public function searchRecipeWithInfo($ingredients)
+    {
+        
+        $url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" . $this->apiKey . "&includeIngredients=$ingredients&addRecipeNutrition=true&instructionsRequired=true";
+        // $url = "http://localhost:4433/tubes-rpl2/dummySpoonacular.json";
+        $options = [
+            "http" => [
+                "method" => "GET",
+                "header" => "Content-Type: application/json",
+            ]
+        ];
+        $context = stream_context_create($options);
+        $json_response = json_decode(file_get_contents($url, false, $context), true);
+        $result = $json_response["results"];
+
+        // $this->checkQuota();
         return $result;
     }
 }

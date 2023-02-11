@@ -3,13 +3,27 @@
         <div class="col-12">
             <h1 class="text-center">Home</h1>
         </div>
-        <div class="col-6">
+        <div class="col-12">
+            <h4>Silahkan pilih disini :</h4>
+            <i id="img" class="fas fa-image"></i>
+            <i id="txt" class="fa-solid fa-keyboard"></i>
+        </div>
+        <div id="fImg" class="col-6" style="display: none;">
             <form action="<?= BASEURL; ?>/home" method="POST" id="formFile" enctype="multipart/form-data">
                 <label for="formFile" class="form-label">Masukkan gambar disini</label>
                 <br>
                 <input class="form-control" type="file" id="formFile" name="uploadImage">
                 <br>
-                <button type="submit" name="submit" class="btn btn-light">Submit</button>
+                <button type="submit" name="submitImg" class="btn btn-light">Submit</button>
+            </form>
+        </div>
+        <div id="fTxt" class="col-6" style="display: none;">
+            <form action="<?= BASEURL; ?>/home" method="POST" id="formText">
+                <label for="formText" class="form-label">Masukkan text disini</label>
+                <br>
+                <input class="form-control" type="text" id="formText" name="inputText">
+                <br>
+                <button type="submit" name="submitTxt" class="btn btn-light">Submit</button>
             </form>
         </div>
     </div>
