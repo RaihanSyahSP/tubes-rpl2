@@ -1,7 +1,7 @@
-<div class="container" style="margin-top: 200px;">
+<div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">Discovery</h1>
+            <h2 class="text-center">Discovery</h2>
         </div>
         <?php 
         // echo "<pre>";
@@ -15,7 +15,7 @@
         // $tampilkan = $this->getImage();
         // var_dump($tampilkan);
         ?>
-        <p class="mb-3 text-center">Random Resep Makanan</p>
+        <h5 class="mb-3 text-center">Random Food Recipes</h5>
         <div class="d-flex justify-content-evenly flex-wrap gap-lg-5">
             <?php
             $recipe_no = 0;
@@ -28,7 +28,7 @@
                     <div class="d-flex flex-column card-body">
                         <h6 class="card-title mb-auto"><?= $row["title"] ?></h6>
                         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal<?= $recipe_no ?>">
-                            Lihat Info
+                            See Details
                         </button>
                     </div>
 
@@ -46,7 +46,7 @@
                                 <!-- Modal body -->
                                 <div class="modal-body">
                                     <p>
-                                        <strong>Bahan</strong>
+                                        <strong>Ingredients</strong>
                                         <br>
                                         <table class="text-black w-100">
                                             <?php
@@ -57,7 +57,7 @@
                                         </table>
                                     </p>
                                     <p>
-                                        <strong>Cara Penyajian</strong>
+                                        <strong>Instruction Recipe</strong>
                                         <br>
                                         <?php foreach ($row['analyzedInstructions'] as $step) {
                                             foreach ($step["steps"] as $value[$recipe_no]) {
@@ -67,7 +67,7 @@
                                         } ?>
                                     </p>
                                     <p>
-                                        <strong>Nutrisi</strong>
+                                        <strong>Nutrition</strong>
                                         <br>
                                     </p>
                                     <?php echo "<p>" . $row["summary"] . "</p>"  ?>
@@ -92,7 +92,7 @@
         
         <div class="mt-5 mb-5 d-flex justify-content-center">
             <form action="<?= BASEURL; ?>/discovery" method="POST" id="formText">
-                    <button type="submit" name="submitRandom" class="btn btn-light">Randomize</button>
+                <button type="submit" name="submitRandom" class="btn btn-primary active">Randomize</button>
             </form>
         </div>
 </div>

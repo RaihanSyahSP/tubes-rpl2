@@ -1,0 +1,49 @@
+.btn {
+    border-radius: .5rem !important;
+}
+
+* {
+    transition: all 100ms ease !important;
+}
+
+button[type="submit"]:hover {
+    background-color: darkslategray !important;
+    border-color: darkslategray !important;
+    color: #eee !important;
+}
+
+#img,
+#txt {
+    margin-right: 1rem;
+    padding-block: .5rem;
+    padding-inline: 1rem;
+
+    background-color: #eee;
+
+    border: 2px solid #22222280;
+    border-radius: .5rem;
+    color: #222;
+
+    cursor: pointer;
+}
+
+#img:hover,
+#txt:hover {
+    background-color: #555;
+    color: #eee;
+}
+
+#navScroll {
+    position: sticky;
+    top: 0;
+
+    z-index: 9;
+}
+
+.container {
+    margin-block: 1rem;
+}
+
+.container > .row > * {
+    margin-block: 1rem;
+}

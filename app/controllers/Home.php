@@ -3,7 +3,9 @@
 class Home extends Controller
 {
     protected $image;
+    protected $images;
     protected $inputText;
+    protected $found = false;
 
     public function getImage()
     {
@@ -14,56 +16,62 @@ class Home extends Controller
                 $this->image = file_get_contents($_SERVER['DOCUMENT_ROOT'] . $pathImage);
                 return $this->image;
             }
-        } else {
-            $this->image = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/tubes-rpl2/public/image/strawberry.jpg');
-            return $this->image;
-        }
+        } 
+        // else {
+            // Sebelum ada input gambar (pertama kali masuk ke page)
+            // $this->image = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/tubes-rpl2/public/image/strawberry.jpg');
+            // return $this->image;
+        // }
     }
-
+    
     public function getUserInput()
     {
         if (isset($_POST['submitTxt'])) {
-            $this->inputText = strim($_POST['inputText']);
+            $this->inputText = rtrim($_POST['inputText']);
             return $this->inputText;
-        } else {
-            return "Text goblok mana nih";
-        }
+        } 
+        // Sebelum ada input teks (pertama kali masuk ke page)
     }
-
+    
     public function getRecipeFromImage()
-    {
-        $this->image = $this->getImage();
-        $responseImage = $this->model('VisionModel')->analyzeImage($this->image);
-        $response = $responseImage['responses'][0]['labelAnnotations'];
-        foreach ($response as $label) {
-            $data[] = $label['description'];
+    {   
+        // var_dump($this->image);
+        $image = $this->getImage();
+        if ($image) {
+            $responseImage = $this->model('VisionModel')->analyzeImage($image);
+            $response = $responseImage['responses'][0]['labelAnnotations'];
+            foreach ($response as $label) {
+                $dataImage[] = $label['description'];
+            }
+            $ingredients = str_replace(' ', '', implode(',', $dataImage));
+            $recipe = $this->model('SpoonacularModel')->searchRecipeWithInfo($ingredients);
+            return $recipe;
         }
-        $ingredients = str_replace(' ', '', implode(',', $data));
-        $recipe = $this->model('SpoonacularModel')->searchRecipeWithInfo($ingredients);
-        return $recipe;
     }
 
     public function getRecipeFromUserInput()
     {
-        $this->inputText = $this->getUserInput();
-        $ingredients = str_replace(' ', '', implode(',', $this->inputText));
-        $recipe = $this->model('SpoonacularModel')->searchRecipeWithInfo($ingredients);
+        $inputText = $this->getUserInput();
+        $inputText = str_replace(' ', '', $inputText);
+        
+        $recipe = $this->model('SpoonacularModel')->searchRecipeWithInfo($inputText);
         return $recipe;
     }
 
     public function index()
     {
-        // $image = $this->getImage();
-        if ($this->image === null) {
-            $data = $this->getRecipeFromImage();
-        } elseif ($this->inputText === null) {
-            $data = $this->getRecipeFromUserInput();
+        if ( (isset($_POST["submitImg"])) || (isset($_POST["submitTxt"])) ) {
+            $getImage = $this->getRecipeFromImage();
+            $getText = $this->getRecipeFromUserInput();
+            if ($getImage) {
+                $data = $getImage;
+            } else if ($getText) {
+                $data = $getText;
+            } 
         } else {
             $data = [];
         }
-        // var_dump($data);
-        // $data = $this->model('VisionModel')->analyzeImage($image);
-        // $data['judul'] = 'Home';
+        
         $this->view('templates/header', $data);
         $this->view('home/index', $data);
         $this->view('templates/footer');

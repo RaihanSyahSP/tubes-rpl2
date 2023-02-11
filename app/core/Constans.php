@@ -6,7 +6,7 @@
 define('BASEURL', 'http://localhost:4433/tubes-rpl2/public');
 
 //Site Name
-define('SITE_NAME', 'Mobazeer - Tubes RPL 2');
+define('SITE_NAME', 'Mobazeer | Cook Recipes Finder');
 
 // echo '<pre>';
 // echo 'dirname PHP SELF: ' . dirname($_SERVER['PHP_SELF']);
