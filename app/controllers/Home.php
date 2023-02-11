@@ -1,6 +1,5 @@
 <?php
 
-
 class Home extends Controller
 {
 
@@ -15,7 +14,7 @@ class Home extends Controller
                 return $image;
             }
         } else {
-            $image = file_get_contents('http://localhost/phpmvc/public/image/strawberry.jpg');
+            $image = file_get_contents($_SERVER['DOCUMENT_ROOT'] .'/tubes-rpl2/public/image/strawberry.jpg');
             return $image;
         }
     }
@@ -29,7 +28,9 @@ class Home extends Controller
             $data[] = $label['description'];
         }
         $ingredients = str_replace(' ', '', implode(',', $data));
+        echo '<pre>';
         echo $ingredients;
+        echo '</pre>';
         $recipe = $this->model('SpoonacularModel')->searchRecipe($ingredients);
         return $recipe;
     }

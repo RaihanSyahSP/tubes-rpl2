@@ -11,10 +11,12 @@ class App
         $url = $this->parseUrl();
 
         // controller
-        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
-            $this->controller = $url[0];
-            // var_dump($url);
-            unset($url[0]);
+        if ($url != NULL) {
+            if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+                $this->controller = $url[0];
+                // var_dump($url);
+                unset($url[0]);
+            }
         }
 
         require_once '../app/controllers/' . $this->controller . '.php';

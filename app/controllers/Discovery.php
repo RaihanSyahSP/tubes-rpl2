@@ -1,11 +1,12 @@
 <?php
-    class Discovery extends Controller
+
+class Discovery extends Controller
+{
+    public function index()
     {
-        public function index()
-        {
-            $data['judul'] = 'Discovery';
-            $this->view('templates/header', $data);
-            $this->view('discovery/index');
-            $this->view('templates/footer');
-        }
+        $page['judul'] = 'Discovery';
+        $this->view('templates/header', $page);
+        $this->view('discovery/index');
+        $this->view('templates/footer');
     }
+}

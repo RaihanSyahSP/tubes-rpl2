@@ -1,0 +1,6 @@
+https://api.spoonacular.com/recipes/complexSearch?
+apiKey=b45d5854806c49ae955763d19945bb2e
+&number=2
+&includeIngredients=chicken
+&addRecipeNutrition=true
+&instructionsRequired=true
