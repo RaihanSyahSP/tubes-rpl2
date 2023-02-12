@@ -16,7 +16,7 @@ class Home extends Controller
 
             $limit = 5000000;
             if ($size > $limit) {
-                Flasher::setFlash('Size', 'image', 'danger');
+                Flasher::setFlash('Size', 'image', 'danger', 'match');
                 return false;
             }
             //validasi end
@@ -34,7 +34,7 @@ class Home extends Controller
             $this->inputText = rtrim($_POST['inputText']);
             $regex = '/^[a-z]+((,)[a-z]+)*$/';
             if (!preg_match($regex, $this->inputText)) {
-                Flasher::setFlash('Pattern', 'text', 'danger');
+                Flasher::setFlash('Pattern', 'text', 'danger', 'match');
                 return false;
             }
             return $this->inputText;
@@ -76,7 +76,7 @@ class Home extends Controller
                 $data = $getText;
             } else {
                 $data = [];
-                Flasher::setFlash('Data', 'image/text', 'danger');
+                Flasher::setFlash('Data', 'image/text', 'danger', 'found');
             }
         } else {
             $data = [];

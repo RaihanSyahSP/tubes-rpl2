@@ -4,6 +4,7 @@
 // define('BASEURL', 'localhost:3000/');
 // define('BASEURL', $_SERVER['DOCUMENT_ROOT']);
 define('BASEURL', 'http://localhost:4433/tubes-rpl2/public');
+define('URLTUBES', 'http://localhost:4433/tubes-rpl2');
 
 //Site Name
 define('SITE_NAME', 'Mobazeer | Cook Recipes Finder');

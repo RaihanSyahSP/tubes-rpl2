@@ -3,10 +3,11 @@
         {
             "name" : "Irvin Widyastanto",
             "nim" : "10120190",
-            "facebook" : "https://www.facebook.com/jalisgaf__",
-            "instagram" : "https://www.instagram.com/jalisgaf__",
-            "twitter" : "https://www.instagram.com/jalisgaf__",
-            "linkedin" : "https://www.instagram.com/jalisgaf__"
+            "facebook" : "#",
+            "instagram" : "https://www.instagram.com/irvinwidya",
+            "twitter" : "#",
+            "linkedin" : "https://www.instagram.com/irvinwidya",
+            "img" : "/tubes-rpl2/public/image/irvin.jpg"
         },
         {
             "name" : "Raihan Syah Sukana Putra",
@@ -14,15 +15,17 @@
             "facebook" : "https://www.facebook.com/jalisgaf__",
             "instagram" : "https://www.instagram.com/raihansyahsp",
             "twitter" : "https://www.instagram.com/jalisgaf__",
-            "linkedin" : "https://www.instagram.com/jalisgaf__"
+            "linkedin" : "https://www.instagram.com/jalisgaf__",
+            "img" : "/tubes-rpl2/public/image/raihan.JPG"
         },
         {
             "name" : "Jalis Ghulam A.Farid",
             "nim" : "10120173",
-            "facebook" : "http://www.ekobudisetiawan.com/index.php",
-            "instagram" : "http://www.ekobudisetiawan.com/index.php",
-            "twitter" : "http://www.ekobudisetiawan.com/index.php",
-            "linkedin" : "http://www.ekobudisetiawan.com/index.php"
+            "facebook" : "https://www.facebook.com/jalisgaf__",
+            "instagram" : "https://www.instagram.com/jalisgaf__",
+            "twitter" : "https://www.twitter.com/jalisgaf__",
+            "linkedin" : "https://www.linkedin.com/in/jalis-ghulam-a-farid-959984206/",
+            "img" : "/tubes-rpl2/public/image/ayamjantan.jpg"
         },
         {
             "name" : "Oman Subadri",
@@ -30,7 +33,8 @@
             "facebook" : "https://www.facebook.com/oman.subadri/",
             "instagram" : "https://www.instagram.com/gemjeeh",
             "twitter" : "https://twitter.com/GemZee_",
-            "linkedin" : "http://www.ekobudisetiawan.com/index.php"
+            "linkedin" : "",
+            "img" : ""
         },
         {
             "name" : "Winda Asmarawati",
@@ -38,7 +42,8 @@
             "facebook" : "https://www.facebook.com/jalisgaf__",
             "instagram" : "https://www.instagram.com/jalisgaf__",
             "twitter" : "https://www.instagram.com/jalisgaf__",
-            "linkedin" : "https://www.instagram.com/jalisgaf__"
+            "linkedin" : "https://www.instagram.com/jalisgaf__",
+            "img" : ""
         },
         {
             "name" : "Abdurrazak Syakir Muharam",
@@ -46,7 +51,8 @@
             "facebook" : "https://www.facebook.com/jalisgaf__",
             "instagram" : "https://www.instagram.com/jalisgaf__",
             "twitter" : "https://www.instagram.com/jalisgaf__",
-            "linkedin" : "https://www.instagram.com/jalisgaf__"
+            "linkedin" : "https://www.instagram.com/jalisgaf__",
+            "img" : ""
         }
     ]
 

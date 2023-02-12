@@ -26,36 +26,5 @@
         formImg.removeAttribute('required');
         formText.setAttribute('required', '');
     });
-
-
-    /*  ==========================================
-        SHOW UPLOADED IMAGE
-    * ========================================== */
-    // function readURL(input) {
-    //     if (input.files && input.files[0]) {
-    //         let reader = new FileReader();
-
-    //         reader.onload = function (e) {
-    //             $('#imageResult')
-    //                 .attr('src', e.target.result);
-    //         };
-    //         reader.readAsDataURL(input.files[0]);
-    //     }
-    // }
-
-    // $(function () {
-    //     $('#upload').on('change', function () {
-    //         readURL(input);
-    //     });
-    // });
-
-    /*  ==========================================
-        SHOW UPLOADED IMAGE NAME
-    * ========================================== */
-    // let input = document.getElementById( 'formFile' );
-
-    // input.addEventListener( 'change',function (event) {
-    //     let input = event.srcElement;
-    // });
 </script>
 </html>

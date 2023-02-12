@@ -6,13 +6,20 @@
     transition: all 100ms ease !important;
 }
 
+*::selection {
+    background-color: greenyellow;
+}
+
 button[type="submit"]:hover {
     background-color: darkslategray !important;
     border-color: darkslategray !important;
     color: #eee !important;
 }
 
-
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 #img,
 #txt {
@@ -38,6 +45,9 @@ button[type="submit"]:hover {
 #navScroll {
     position: sticky;
     top: 0;
+
+    height: 5rem;
+    padding: 0;
 
     z-index: 9;
 }

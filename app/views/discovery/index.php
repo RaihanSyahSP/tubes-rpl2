@@ -44,7 +44,7 @@
                                 </div>
 
                                 <!-- Modal body -->
-                                <div class="modal-body">
+                                <div class="modal-body text-justify">
                                     <p>
                                         <strong>Ingredients</strong>
                                         <br>
@@ -66,7 +66,7 @@
                                             }
                                         } ?>
                                     </p>
-                                    <p>
+                                    <p></p>
                                         <strong>Nutrition</strong>
                                         <br>
                                     </p>
