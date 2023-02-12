@@ -9,16 +9,22 @@
     const txt = document.getElementById('txt');
     const fImg = document.getElementById('fImg');
     const fTxt = document.getElementById('fTxt');
+    const formImg = document.getElementById('inputImage'); 
+    const formText = document.getElementById('inputText'); 
 
     img.addEventListener('click', function() {
         fImg.style.display = 'inline';
         fTxt.style.display = 'none';
+        formImg.setAttribute('required', '');
+        formText.removeAttribute('required');
     });
 
     txt.addEventListener('click', function() {
         let fTxt = document.getElementById('fTxt');
         fTxt.style.display = 'inline';
         fImg.style.display = 'none';
+        formImg.removeAttribute('required');
+        formText.setAttribute('required', '');
     });
 
 

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="text-center">Discovery</h2>
+            <h2 class="text-center fw-bold">Discovery</h2>
         </div>
         <?php 
         // echo "<pre>";
@@ -35,7 +35,7 @@
                     <!-- The Modal -->
                     <div class="modal" id="myModal<?= $recipe_no ?>">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content px-1">
 
                                 <!-- Modal Header -->
                                 <div class="modal-header">

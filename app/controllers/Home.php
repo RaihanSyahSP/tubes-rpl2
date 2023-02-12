@@ -11,26 +11,34 @@ class Home extends Controller
     {
         if (isset($_POST['submitImg'])) {
             $images = $_FILES['uploadImage'];
+            // valdiasi start
+            $size = $images['size'];
+
+            $limit = 5000000;
+            if ($size > $limit) {
+                Flasher::setFlash('Size', 'image', 'danger');
+                return false;
+            }
+            //validasi end
             $pathImage = '/tubes-rpl2/public/image/' . $images['name'];
             if (move_uploaded_file($images['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $pathImage)) {
                 $this->image = file_get_contents($_SERVER['DOCUMENT_ROOT'] . $pathImage);
                 return $this->image;
             }
-        } 
-        // else {
-            // Sebelum ada input gambar (pertama kali masuk ke page)
-            // $this->image = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/tubes-rpl2/public/image/strawberry.jpg');
-            // return $this->image;
-        // }
+        }
     }
     
     public function getUserInput()
     {
         if (isset($_POST['submitTxt'])) {
             $this->inputText = rtrim($_POST['inputText']);
+            $regex = '/^[a-z]+((,)[a-z]+)*$/';
+            if (!preg_match($regex, $this->inputText)) {
+                Flasher::setFlash('Pattern', 'text', 'danger');
+                return false;
+            }
             return $this->inputText;
         } 
-        // Sebelum ada input teks (pertama kali masuk ke page)
     }
     
     public function getRecipeFromImage()
@@ -52,7 +60,6 @@ class Home extends Controller
     public function getRecipeFromUserInput()
     {
         $inputText = $this->getUserInput();
-        $inputText = str_replace(' ', '', $inputText);
         
         $recipe = $this->model('SpoonacularModel')->searchRecipeWithInfo($inputText);
         return $recipe;
@@ -67,7 +74,10 @@ class Home extends Controller
                 $data = $getImage;
             } else if ($getText) {
                 $data = $getText;
-            } 
+            } else {
+                $data = [];
+                Flasher::setFlash('Data', 'image/text', 'danger');
+            }
         } else {
             $data = [];
         }

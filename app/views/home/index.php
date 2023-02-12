@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="text-center">Home</h2>
+            <h2 class="text-center fw-bold">Home</h2>
         </div>
         <div class="card mt-5 text-black text-center">
             <div class="card-header">
@@ -10,14 +10,14 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-6">
-                        <h5 class="card-title">Image upload formats</h5>
-                        <p class="card-text">The avalaible file extension is jpg, jpeg, png, jfif, etc.</p>
-                        <p class="card-text">Limit size that you can use is around .... </p>
+                        <h5 class="card-title">Image Upload Formats</h5>
+                        <p class="card-text">Supported file extension are jpg, jpeg, png, jfif, etc.</p>
+                        <p class="card-text">Image size must be smaller than 5 MB </p>
                     </div>
                     <div class="col-6">
-                        <h5 class="card-title">Text input formats</h5>
-                        <p class="card-text">Separate ingredients by using <span class="fw-bolder">' , ' (coma)</span> without <span class="fw-bolder">'<span class="text-white" </span>a</span>' (space)</span>.</p>
-                        <p class="card-text">Example : Chicken,Fish,Mango,Spinach</p>
+                        <h5 class="card-title">Text Input Formats</h5>
+                        <p class="card-text">Separate ingredients by <span class="fw-bolder">' , ' (comma)</span> without <span class="fw-bolder">'&nbsp;&nbsp;' (space)</span>.</p>
+                        <p class="card-text">Example: <span class="fw-bolder">Chicken,Fish,Mango,Spinach</span></p>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-12">
-            <h4>Select input type :</h4>
+            <h4>Select input type:</h4>
             <span id="img">
                 <i class="fas fa-image"></i> Image
             </span>
@@ -35,26 +35,29 @@
             </span>
         </div>
         <div id="fImg" class="col-6" style="display: none;">
-            <form action="<?= BASEURL; ?>/home" method="POST" id="formFile" enctype="multipart/form-data">
-                <label for="formFile" class="form-label">Upload the image below</label>
+            <form action="<?= BASEURL; ?>/home" method="POST" id="formImg" enctype="multipart/form-data">
+                <label for="inputImage" class="form-label">Upload the image below</label>
                 <br>
-                <input class="form-control" type="file" id="formFile" name="uploadImage">
+                <input class="form-control" type="file" id="inputImage" name="uploadImage">
                 <br>
                 <button type="submit" name="submitImg" class="btn btn-light">Submit</button>
             </form>
         </div>
         <div id="fTxt" class="col-6" style="display: none;">
             <form action="<?= BASEURL; ?>/home" method="POST" id="formText">
-                <label for="formText" class="form-label">Input the text below</label>
+                <label for="inputText" class="form-label">Input the text below</label>
                 <br>
-                <input class="form-control" type="text" id="formText" name="inputText">
+                <input class="form-control" type="text" id="inputText" name="inputText">
                 <br>
                 <button type="submit" name="submitTxt" class="btn btn-light">Submit</button>
             </form>
         </div>
+        <div class="col-12">
+            <?= Flasher::getFlash(); ?>
+        </div>
     </div>
-    <?php if (count($data) > 0) {
-    ?>
+    <?php if ((count($data) > 0) && (Flasher::$check == false)) {
+        ?>
         <h3 class="mb-3">Recipes Recommendation</h3>
         <div class="d-flex justify-content-evenly flex-wrap gap-lg-5">
             <?php
@@ -76,7 +79,7 @@
                     <!-- The Modal -->
                     <div class="modal" id="myModal<?= $recipe_no ?>">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content px-1">
 
                                 <!-- Modal Header -->
                                 <div class="modal-header">
