@@ -43,7 +43,6 @@ class Home extends Controller
     
     public function getRecipeFromImage()
     {   
-        // var_dump($this->image);
         $image = $this->getImage();
         if ($image) {
             $responseImage = $this->model('VisionModel')->analyzeImage($image);
@@ -80,6 +79,7 @@ class Home extends Controller
             }
         } else {
             $data = [];
+            Flasher::setFlash('Data', 'image/text', 'danger', 'found');
         }
         
         $this->view('templates/header', $data);
